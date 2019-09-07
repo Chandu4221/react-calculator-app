@@ -1,3 +1,6 @@
 # react-calculator-app
+[View App](https://react-calculator-app.stackblitz.io)
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-calculator-app)
+```
+Made with ❤️
+```
