@@ -105,7 +105,8 @@ class CalculatorWrapper extends Component {
         displayValue: String(
           arithemeticOperations[`${operator}`](oldValue, displayValue)
         ),
-        operator: null
+        operator: null,
+        continueCalculation:false
       });
   };
 
