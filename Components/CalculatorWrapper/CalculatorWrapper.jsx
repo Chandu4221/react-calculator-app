@@ -11,7 +11,8 @@ class CalculatorWrapper extends Component {
       displayValue: '0',
       operator: null,
       waitingForOperand: false,
-      oldValue: '0'
+      oldValue: '0',
+      continueCalculation: true
     };
   }
 
@@ -35,12 +36,13 @@ class CalculatorWrapper extends Component {
     if (operator !== null && oldValue === displayValue) {
       this.setState({
         displayValue: '.',
-        waitingForOperand: false
+        waitingForOperand: false,
+        continueCalculation: true
       });
     } else {
       if (displayValue.indexOf('.') === -1) {
         //* indexOf returns the POSITION of first occurance of the value specified else returns -1
-        this.setState({ displayValue: displayValue + '.' });
+        this.setState({ displayValue: displayValue + '.', continueCalculation: true });
       }
     }
   };
@@ -78,7 +80,8 @@ class CalculatorWrapper extends Component {
     this.setState({
       oldValue: displayValue,
       operator: operatorType,
-      waitingForOperand: true
+      waitingForOperand: true,
+      continueCalculation: true
     });
   };
 
