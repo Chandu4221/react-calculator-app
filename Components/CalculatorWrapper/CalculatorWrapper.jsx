@@ -17,14 +17,20 @@ class CalculatorWrapper extends Component {
   }
 
   handleDigit = value => {
-    const { displayValue, waitingForOperand } = this.state;
+    const { displayValue, waitingForOperand, continueCalculation } = this.state;
     if (waitingForOperand) {
       this.setState({
         waitingForOperand: false,
         // oldValue: displayValue,
         displayValue: value
       });
-    } else {
+    }
+    else if (!continueCalculation) {
+      this.setState({
+        displayValue: value
+      });
+    }
+    else {
       this.setState({
         displayValue: displayValue === '0' ? value : displayValue + value
       });
